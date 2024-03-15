@@ -1,9 +1,8 @@
 import 'package:booking_app/data/data.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:booking_app/screens/choose_a_seat.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 Future<void> main() async {
@@ -61,36 +60,43 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEEEEEE),
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(
-          top: 25.0,
-          bottom: 25.0,
-          left: 15.0, 
-          right: 15.0
-        ),
-        padding: const EdgeInsets.all(12.0),
-        decoration: const BoxDecoration(
-          color: Colors.deepOrangeAccent
-        ),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-
-            Text("SEARCH FLIGHTS",
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const ChooseSeatPage();
+          }));
+        },
+        child: Container(
+          margin: const EdgeInsets.only(
+            top: 25.0,
+            bottom: 25.0,
+            left: 15.0, 
+            right: 15.0
+          ),
+          padding: const EdgeInsets.all(12.0),
+          decoration: const BoxDecoration(
+            color: Colors.deepOrangeAccent
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+        
+              Text("SEARCH FLIGHTS",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold
+                ),
               ),
-            ),
-
-            Icon(
-              Icons.arrow_right,
-              color: Colors.white,
-            )
-
-          ],
-        )
+        
+              Icon(
+                Icons.arrow_right,
+                color: Colors.white,
+              )
+        
+            ],
+          )
+        ),
       ),
       appBar: AppBar(
         title: Text(widget.title,

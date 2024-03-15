@@ -8,41 +8,152 @@ List<String> classes = [
   "ECONOMY"
 ];
 
-List<Map<String, dynamic>> seats = [
+List<Map<String, dynamic>> seats1 = [
   {
     "id": 1,
     "name": "A1",
     "booked":  false,
-    "price": "10.000"
+    "row": 1
   },
   {	    
     "id": 2,       
-    "name": "A2",
+    "name": "B1",
     "booked": false,
-    "price": "20.000"
+    "row": 1,
   },
   {
     "id": 3,       
-    "name": "A3",
+    "name": "A2",
     "booked": true,
-    "price": "30.000"
+    "row": 2
   },
   {
     "id": 4,
-    "name": "A4",
+    "name": "B2",
     "booked": false,
-    "price": "40.000"
+    "row": 2
   },
   {
     "id": 5,
-    "name": "A5",
-    "booked": false,
-    "price": "50.000"
+    "name": "A3",
+    "booked": true,
+    "row": 3
   },
   {
     "id": 6,
+    "name": "B3",
+    "booked": true,
+    "row": 3
+  },
+  {
+    "id": 6,
+    "name": "A4",
+    "booked": false,
+    "row": 4
+  },
+  {
+    "id": 6,
+    "name": "B4",
+    "booked": true,
+    "row": 4
+  },
+  {
+    "id": 7,
+    "name": "A5",
+    "booked": false,
+    "row": 5
+  },
+  {
+    "id": 8,
+    "name": "B5",
+    "booked": false,
+    "row": 5
+  },
+  {
+    "id": 8,
     "name": "A6",
     "booked": false,
-    "price": "60.000"
+    "row": 6
+  },
+  {
+    "id": 9,
+    "name": "B6",
+    "booked": false,
+    "row": 6
+  },
+];
+
+List<Map<String, dynamic>> seats2 = [
+  {
+    "id": 1,
+    "name": "C1",
+    "booked":  false,
+    "row": 1
+  },
+  {	    
+    "id": 2,       
+    "name": "D1",
+    "booked": false,
+    "row": 1,
+  },
+  {
+    "id": 3,       
+    "name": "C2",
+    "booked": true,
+    "row": 2
+  },
+  {
+    "id": 4,
+    "name": "D2",
+    "booked": false,
+    "row": 2
+  },
+  {
+    "id": 5,
+    "name": "C3",
+    "booked": true,
+    "row": 3
+  },
+  {
+    "id": 6,
+    "name": "D4",
+    "booked": true,
+    "row": 3
+  },
+  {
+    "id": 6,
+    "name": "C4",
+    "booked": false,
+    "row": 4
+  },
+  {
+    "id": 6,
+    "name": "D5",
+    "booked": true,
+    "row": 4
+  },
+  {
+    "id": 7,
+    "name": "C5",
+    "booked": false,
+    "row": 5
+  },
+  {
+    "id": 8,
+    "name": "D5",
+    "booked": false,
+    "row": 5
+  },
+  {
+    "id": 8,
+    "name": "C6",
+    "booked": false,
+    "row": 6
+  },
+  {
+    "id": 9,
+    "name": "D6",
+    "booked": false,
+    "row": 6
   },
 ];
