@@ -115,32 +115,29 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                 
                         Expanded(
                           flex: 2,
-                          child: Container(
-                            margin: const EdgeInsets.only(bottom: 20.0),
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              itemBuilder: (_, int i) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    if(seats1[i]["booked"]) return;
-                            
-                                    setState(() {
-                                      seatSelected = seats1[i]["name"];
-                                    });
-                                  },
-                                  child: SeatItem(
-                                    selected: seatSelected,
-                                    seat: seats1[i]
-                                  ),
-                                );
-                              },
-                              itemCount: seats1.length,
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 15,
-                                crossAxisSpacing: 15,
-                                childAspectRatio: 1 / 0.95,
-                              ),
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            itemBuilder: (_, int i) {
+                              return GestureDetector(
+                                onTap: () {
+                                  if(seats1[i]["booked"]) return;
+                          
+                                  setState(() {
+                                    seatSelected = seats1[i]["name"];
+                                  });
+                                },
+                                child: SeatItem(
+                                  selected: seatSelected,
+                                  seat: seats1[i]
+                                ),
+                              );
+                            },
+                            itemCount: seats1.length,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 15,
+                              crossAxisSpacing: 15,
+                              childAspectRatio: 1 / 0.95,
                             ),
                           )
                         ),
@@ -149,20 +146,20 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
 
                         Expanded(
                           flex: 1,
-                          child:  ListView.builder(
+                          child:  GridView.builder(
                             shrinkWrap: true,
-                            padding: EdgeInsets.zero,
-                            itemCount:halfSeats1,
-                            itemBuilder:(_, int i) {
+                            itemBuilder: (_, int i) {
                               return Center(
-                                child: Container(
-                                  color: Colors.transparent,
-                                  alignment: Alignment.center,
-                                  height: 70.0,
-                                  child: Text("${i+1}")
-                                ),
+                                child: Text((i + 1).toString())
                               );
                             },
+                            itemCount: halfSeats1,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              mainAxisSpacing: 15,
+                              crossAxisSpacing: 15,
+                              childAspectRatio: 1 / 0.85,
+                            ),
                           ),
                         ),
 
@@ -170,34 +167,31 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
 
                         Expanded(
                           flex: 2,
-                          child: Container(
-                            margin: const EdgeInsets.only(bottom: 20.0),
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              itemBuilder: (_, int i) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    if(seats2[i]["booked"]) return;
-                            
-                                    setState(() {
-                                      seatSelected = seats2[i]["name"];
-                                    });
-                                  },
-                                  child: SeatItem(
-                                    selected: seatSelected,
-                                    seat: seats2[i]
-                                  ),
-                                );
-                              },
-                              itemCount: seats2.length,
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 15,
-                                crossAxisSpacing: 15,
-                                childAspectRatio: 1 / 0.95,
-                              ),
+                          child:  GridView.builder(
+                            shrinkWrap: true,
+                            itemBuilder: (_, int i) {
+                              return GestureDetector(
+                                onTap: () {
+                                  if(seats2[i]["booked"]) return;
+                          
+                                  setState(() {
+                                    seatSelected = seats2[i]["name"];
+                                  });
+                                },
+                                child: SeatItem(
+                                  selected: seatSelected,
+                                  seat: seats2[i]
+                                ),
+                              );
+                            },
+                            itemCount: seats2.length,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 15,
+                              crossAxisSpacing: 15,
+                              childAspectRatio: 1 / 0.95,
                             ),
-                          )
+                          ),
                         ),
 
                       ],
