@@ -116,7 +116,7 @@ List<Map<String, dynamic>> seats2 = [
   },
   {
     "id": 6,
-    "name": "D4",
+    "name": "D3",
     "booked": true,
     "row": 3
   },
@@ -128,7 +128,7 @@ List<Map<String, dynamic>> seats2 = [
   },
   {
     "id": 8,
-    "name": "D5",
+    "name": "D4",
     "booked": true,
     "row": 4
   },

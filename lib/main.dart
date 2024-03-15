@@ -457,7 +457,7 @@ class MyHomePageState extends State<MyHomePage> {
                                         ),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(6.0),
-                                          color: Colors.blueGrey
+                                          color: Colors.deepOrangeAccent
                                         ),
                                         child: const Text('-',
                                           style: TextStyle(
@@ -484,7 +484,7 @@ class MyHomePageState extends State<MyHomePage> {
                                         ),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(6.0),
-                                          color: Colors.blueGrey
+                                          color: Colors.deepOrangeAccent
                                         ),
                                         child: const Text("+",
                                           style: TextStyle(

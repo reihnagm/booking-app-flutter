@@ -1,4 +1,5 @@
 import 'package:booking_app/data/data.dart';
+import 'package:booking_app/screens/flight.dart';
 
 import 'package:booking_app/screens/widgets/seats_item.dart';
 
@@ -14,7 +15,7 @@ class ChooseSeatPage extends StatefulWidget {
 
 class ChooseSeatPageState extends State<ChooseSeatPage> {
 
-  String selected = "";
+  String seatSelected = "";
 
   int halfSeats1 = seats1.length ~/ 2;
   int halfSeats2 = seats2.length ~/ 2;
@@ -25,8 +26,17 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
       backgroundColor: const Color(0xFFEEEEEE),
       bottomNavigationBar: GestureDetector(
         onTap: () {
+          if(seatSelected == "") {
+            const snackBar = SnackBar(
+              content: Text('Please Select Your Seat!'),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            return;
+          }
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const ChooseSeatPage();
+            return FlightPage(
+              seat: seatSelected,
+            );
           }));
         },
         child: Container(
@@ -68,18 +78,17 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
           return [
 
             const SliverAppBar(
-              forceMaterialTransparency: true,
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.deepOrangeAccent,
               elevation: 0.0,
               title: Text("CHOOSE A SEAT",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 16.0
                 ),
               ),
               leading: CupertinoNavigationBarBackButton(
-                color: Colors.black,
+                color: Colors.white,
               ),
             )
             
@@ -116,11 +125,11 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                                     if(seats1[i]["booked"]) return;
                             
                                     setState(() {
-                                      selected = seats1[i]["name"];
+                                      seatSelected = seats1[i]["name"];
                                     });
                                   },
                                   child: SeatItem(
-                                    selected: selected,
+                                    selected: seatSelected,
                                     seat: seats1[i]
                                   ),
                                 );
@@ -171,11 +180,11 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                                     if(seats2[i]["booked"]) return;
                             
                                     setState(() {
-                                      selected = seats2[i]["name"];
+                                      seatSelected = seats2[i]["name"];
                                     });
                                   },
                                   child: SeatItem(
-                                    selected: selected,
+                                    selected: seatSelected,
                                     seat: seats2[i]
                                   ),
                                 );
