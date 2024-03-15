@@ -14,7 +14,7 @@ class ChooseSeatPage extends StatefulWidget {
 
 class ChooseSeatPageState extends State<ChooseSeatPage> {
 
-  int selected = -1;
+  String selected = "";
 
   int halfSeats1 = seats1.length ~/ 2;
   int halfSeats2 = seats2.length ~/ 2;
@@ -116,12 +116,11 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                                     if(seats1[i]["booked"]) return;
                             
                                     setState(() {
-                                      selected = i;
+                                      selected = seats1[i]["name"];
                                     });
                                   },
                                   child: SeatItem(
                                     selected: selected,
-                                    i: i,
                                     seat: seats1[i]
                                   ),
                                 );
@@ -172,12 +171,11 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                                     if(seats2[i]["booked"]) return;
                             
                                     setState(() {
-                                      selected = i;
+                                      selected = seats2[i]["name"];
                                     });
                                   },
                                   child: SeatItem(
                                     selected: selected,
-                                    i: i,
                                     seat: seats2[i]
                                   ),
                                 );
@@ -199,37 +197,6 @@ class ChooseSeatPageState extends State<ChooseSeatPage> {
                   ])
                 ),
               ),
-              
-              // SliverPadding(
-              //   padding: const EdgeInsets.all(16.0),
-              //   sliver: SliverGrid(
-              //     delegate: SliverChildBuilderDelegate(
-              //       (_, int i) {
-              //         return GestureDetector(
-              //           onTap: () {
-              //             if(seats[i]["booked"]) return;
-
-              //             setState(() {
-              //               selected = i;
-              //             });
-              //           },
-              //           child: SeatItem(
-              //             selected: selected,
-              //             i: i,
-              //             seat: seats[i]
-              //           ),
-              //         );
-              //       },
-              //       childCount: seats.length,
-              //     ),
-              //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              //       crossAxisCount: 2,
-              //       mainAxisSpacing: 15,
-              //       crossAxisSpacing: 15,
-              //       childAspectRatio: 2.0,
-              //     ),
-              //   ),
-              // ),
                 
             ],
           ),

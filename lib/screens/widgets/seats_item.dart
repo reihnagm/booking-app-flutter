@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SeatItem extends StatefulWidget {
-  final int selected;
-  final int i;
+  final String selected;
   final Map<String, dynamic> seat;
 
   const SeatItem({
     required this.selected,
-    required this.i,
     required this.seat,
     super.key
   });
@@ -25,7 +23,7 @@ class SeatItemState extends State<SeatItem> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6.0),
         border: Border.all(
-          color: widget.selected == widget.i 
+          color: widget.selected == widget.seat["name"] 
           ? Colors.deepOrangeAccent
           : Colors.transparent
         ),
